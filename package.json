@@ -4,7 +4,8 @@
   "description": "Find food trucks around bend OR",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test"
+    "test": "npm run test",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
