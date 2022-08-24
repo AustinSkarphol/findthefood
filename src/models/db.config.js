@@ -1,4 +1,7 @@
 require("dotenv").config();
+
+
+
 module.exports = {
     HOST: 'bendfoodtrucks.mysql.database.azure.com',
     USER:  process.env.MYSQL_USER,

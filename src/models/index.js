@@ -12,6 +12,7 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
     idle: dbConfig.pool.idle,
   }
 });
+console.log('INDEX VALUES')
 console.log(process.env.MYSQL)
 console.log(process.env.MYSQL_USER)
 console.log(process.env.MYSQL_DB)
