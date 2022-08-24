@@ -1,5 +1,3 @@
-require('dotenv').config();
-
 const express =  require("express");
 const trucks = require("../src/routes/truck.routes");
 const location = require('../src/routes/location.routes.js')
