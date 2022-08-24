@@ -1,4 +1,4 @@
-require("dotenv").config();
+
 module.exports = {
     HOST: process.env.MYSQL,
     USER:  process.env.MYSQL_USER,
