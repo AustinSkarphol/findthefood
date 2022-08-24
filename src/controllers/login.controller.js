@@ -3,7 +3,7 @@ const db = require("../models")
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { wait } = require("@testing-library/user-event/dist/utils");
-const { ContactsOutlined, NextWeek } = require("@material-ui/icons");
+
 const { truck } = require("../models");
 const Truck = db.truck;
 const Login = db.login;
