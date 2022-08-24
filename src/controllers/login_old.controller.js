@@ -2,7 +2,7 @@ const db = require("../models")
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { wait } = require("@testing-library/user-event/dist/utils");
-const { ContactsOutlined } = require("@material-ui/icons");
+
 const TruckLogin = db.truck_login
 require("dotenv").config();
 
