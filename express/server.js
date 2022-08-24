@@ -9,9 +9,9 @@ const port = process.env.EXPRESS_PORT;
 
 
 
-app.use(express.json());
-app.use(bodyParser.urlencoded({extended: true }));
-app.use(bodyParser.json());
+// app.use(express.json());
+// app.use(bodyParser.urlencoded({extended: true }));
+// app.use(bodyParser.json());
 
 app.listen(port, () => {
     console.log(`Application is listening at port ${port}`);
@@ -27,6 +27,9 @@ db.sequelize.sync()
   });
 
 trucksRouter = express.Router();
+console.log('Serverjs '+process.env.MYSQL)
+console.log('Serverjs '+process.env.MYSQL_USER)
+console.log('Serverjs '+process.env.MYSQL_DB)
 
 
 app.use('/trucks', trucks);
