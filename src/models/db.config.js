@@ -1,6 +1,6 @@
-
+require("dotenv").config();
 module.exports = {
-    HOST: process.env.MYSQL,
+    HOST: process.env.AZURE_MYSQL_HOST,
     USER:  process.env.MYSQL_USER,
     PASSWORD: process.env.MYSQL_PW,
     DB: process.env.MYSQL_DB,
