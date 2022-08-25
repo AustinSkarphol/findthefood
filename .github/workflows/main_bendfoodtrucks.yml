@@ -13,7 +13,7 @@ env:
   REACT_APP_MYSQL: ${{ secrets.REACT_APP_MYSQL }}
   REACT_APP_MYSQL_DB: ${{ secrets.REACT_APP_MYSQL_DB }}
   REACT_APP_MYSQL_USER: ${{ secrets.REACT_APP_MYSQL_USER }}
-  REACT_APP_MYSQL_PW: ${{ secrets.REACT_APP_MYSQL _PW}}
+  REACT_APP_MYSQL_PW: ${{ secrets.REACT_APP_MYSQL_PW}}
 
 jobs:
   build:
