@@ -8,7 +8,8 @@ const app = express()
 const port = 8000;
 
 
-
+console.log(process.env.REACT_APP_MYSQL)
+console.log(process.env.REACT_APP_MYSQL_DB)
 // app.use(express.json());
 // app.use(bodyParser.urlencoded({extended: true }));
 // app.use(bodyParser.json());
@@ -27,8 +28,7 @@ db.sequelize.sync()
   });
 
 trucksRouter = express.Router();
-console.log(process.env.REACT_APP_MYSQL)
-console.log(process.env.REACT_APP_MYSQL_DB)
+
 
 
 app.use('/trucks', trucks);
