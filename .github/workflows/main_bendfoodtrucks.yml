@@ -72,6 +72,3 @@ jobs:
           slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9378818AF62240C99177B43D093C2B9F }}
           package: .
-      - name: Run Express
-        run:
-          npm run express --if-present
