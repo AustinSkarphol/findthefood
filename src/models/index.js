@@ -1,4 +1,4 @@
-require("dotenv").config()
+
 const dbConfig = require("../models/db.config");
 const Sequelize = require("sequelize");
 
@@ -13,11 +13,7 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
     idle: dbConfig.pool.idle,
   }
 });
-console.log('INDEX VALUES')
-console.log(process.env.MYSQL)
-console.log(process.env.MYSQL_USER)
-console.log(process.env.MYSQL_DB)
-console.log(process.env.AZURE_MYSQL_HOST)
+console.log(process.env.REACT_APP_MYSQL)
 const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;

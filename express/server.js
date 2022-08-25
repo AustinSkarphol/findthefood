@@ -26,6 +26,7 @@ db.sequelize.sync()
     console.log("Failed to sync db: " + err.message);
   });
 
+require("dotenv").config()
 trucksRouter = express.Router();
 console.log('SERVER VALUES');
 console.log(process.env.MYSQL);

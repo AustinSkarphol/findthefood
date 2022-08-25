@@ -1,7 +1,7 @@
 require("dotenv").config()
 module.exports = {
-    HOST: process.env["MYSQL"],
-    USER:  process.env["MYSQL_USER"],
+    HOST: process.env["REACT_APP_MYSQL"],
+    USER:  process.env["REACT_APP_MYSQL_USER"],
     PASSWORD: process.env["MYSQL_PW"],
     DB: process.env["MYSQL_DB"],
     dialect: "mysql",
