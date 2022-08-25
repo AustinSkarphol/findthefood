@@ -27,6 +27,8 @@ db.sequelize.sync()
   });
 
 trucksRouter = express.Router();
+console.log(process.env.REACT_APP_MYSQL)
+console.log(process.env.REACT_APP_MYSQL_DB)
 
 
 app.use('/trucks', trucks);

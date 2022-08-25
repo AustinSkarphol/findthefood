@@ -13,7 +13,7 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
     idle: dbConfig.pool.idle,
   }
 });
-console.log(process.env.REACT_APP_MYSQL)
+
 const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
