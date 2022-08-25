@@ -5,7 +5,7 @@ const login = require('../src/routes/login.routes.js')
 const bodyParser =  require("body-parser");
 
 const app = express()
-const port = process.env.REACT_APP_MYSQL_DB;
+const port = process.env.REACT_APP_EXPRESS_PORT;
 
 
 
