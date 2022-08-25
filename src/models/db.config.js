@@ -2,8 +2,8 @@ require("dotenv").config()
 module.exports = {
     HOST: process.env["REACT_APP_MYSQL"],
     USER:  process.env["REACT_APP_MYSQL_USER"],
-    PASSWORD: process.env["MYSQL_PW"],
-    DB: process.env["MYSQL_DB"],
+    PASSWORD: process.env["REACT_APP_MYSQL_PW"],
+    DB: process.env["REACT_APP_MYSQL_DB"],
     dialect: "mysql",
     pool: {
       max: 5,

@@ -5,7 +5,7 @@ const login = require('../src/routes/login.routes.js')
 const bodyParser =  require("body-parser");
 
 const app = express()
-const port = process.env.EXPRESS_PORT;
+const port = process.env.REACT_APP_MYSQL_DB;
 
 
 
@@ -26,11 +26,8 @@ db.sequelize.sync()
     console.log("Failed to sync db: " + err.message);
   });
 
-require("dotenv").config()
 trucksRouter = express.Router();
-console.log('SERVER VALUES');
-console.log(process.env.MYSQL);
-console.log(process.env.MYSQL_DB);
+
 
 app.use('/trucks', trucks);
 app.use('/location', location);
