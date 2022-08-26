@@ -30,8 +30,7 @@ jobs:
           REACT_APP_MYSQL_PW: ${{ secrets.REACT_APP_MYSQL_PW }}
           REACT_APP_EXPRESS_PORT: ${{ secrets.REACT_APP_EXPRESS_PORT }}
         run: |
-          echo ${{ secrets.REACT_APP_MYSQL }}
-          npm install
+          npm ci
           npm run build --if-present
           npm run test --if-present
       - name: Zip artifact for deployment
