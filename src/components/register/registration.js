@@ -1,4 +1,4 @@
-import React, {useState,setState} from 'react';
+import React, {useState} from 'react';
 import '../../styles/styles.css'
 import truckRegister from'../../services/truck_registration' 
 
