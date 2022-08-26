@@ -5,17 +5,17 @@ const TruckController = require("../controllers/truck.contoller");
 
 
 // Non Cors/Not protected
-router.get("/trucks/", TruckController.findAll);
+router.get("/", TruckController.findAll);
 //router.get("/name/:truck_name", TruckController.)
-router.get("/trucks/:id", TruckController.findOne);
-router.get("/trucks/name/:name", TruckController.findByName)
+router.get("/:id", TruckController.findOne);
+router.get("/name/:name", TruckController.findByName)
 // Protected by CORS/Auth
 // Truck Creation - Set up email/single use page to send to customers.
-router.post("/trucks/", TruckController.create);
+router.post("/", TruckController.create);
 // Behind Login and limit to updates to specific things like phone number, email, and others.
-router.put("/trucks/:id", TruckController.update);
+router.put("/:id", TruckController.update);
 // No ability to delete right now.
-router.delete("/trucks/:id", TruckController.delete);
+router.delete("/:id", TruckController.delete);
 
 
 // Locations of trucks

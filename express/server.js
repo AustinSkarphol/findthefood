@@ -1,21 +1,33 @@
+require("dotenv").config()
 const express =  require("express");
 const trucks = require("../src/routes/truck.routes");
 const location = require('../src/routes/location.routes.js')
 const login = require('../src/routes/login.routes.js')
 const bodyParser =  require("body-parser");
-
+const path = require('node:path');
 const app = express()
-const port = 8080;
+const port = process.env.REACT_APP_EXPRESS_PORT || 8080
 
 
 
-// app.use(express.json());
+app.use(express.json());
 // app.use(bodyParser.urlencoded({extended: true }));
-// app.use(bodyParser.json());
+app.use(bodyParser.json());
+//app.use(express.static(path.join(__dirname, 'build')));
+
+// app.get('/', function (req, res) {
+//     res.sendFile(path.join(__dirname, 'build', 'index.html'));
+// }); 
+
+
 
 app.listen(port, () => {
     console.log(`Application is listening at port ${port}`);
 });
+
+// app.use('/home', function(req, res) {
+//   res.sendFile(path.join(__dirname, '/index.html'));
+// });
 
 const db = require("../src/models");
 db.sequelize.sync()
@@ -30,9 +42,18 @@ trucksRouter = express.Router();
 
 
 
-app.use('/trucks', trucks);
-app.use('/location', location);
-app.use('/login',login)
+app.use(express.static('./build'));
+console.log(__dirname)
+
+app.get('/', function (req, res, next) {
+    res.sendFile(path.resolve('build/index.html'));
+});
+
+
+app.use('/api/trucks', trucks);
+app.use('/api/location', location);
+app.use('/api/login',login)
+
 
 
 // trucksRouter.route('/api/trucks/')
