@@ -2,16 +2,17 @@
 const db = require("../models")
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
-const { wait } = require("@testing-library/user-event/dist/utils");
+
 
 const { truck } = require("../models");
 const Truck = db.truck;
 const Login = db.login;
 const TruckOwner = db.truck_owner
-require("dotenv").config();
+
 
 
 exports.create = async (req, res) => {
+console.log(req.body);
   if (!req.body.email) {
     res.status(400).send({
       message: "Content can not be empty!"
@@ -24,7 +25,7 @@ exports.create = async (req, res) => {
   if (findUser) {
     return res.status(409).send("User Already Exist. Please Login");
   }
-
+  console.log('in loging register.')
 
   const token = jwt.sign(
     { id: Login.id, email: Login.email, type: Login.type },

@@ -10,8 +10,8 @@ const port = process.env.REACT_APP_EXPRESS_PORT || 8080
 
 
 
-app.use(express.json());
-// app.use(bodyParser.urlencoded({extended: true }));
+//app.use(express.json());
+app.use(bodyParser.urlencoded({extended: true }));
 app.use(bodyParser.json());
 //app.use(express.static(path.join(__dirname, 'build')));
 
@@ -40,19 +40,21 @@ db.sequelize.sync()
 
 trucksRouter = express.Router();
 
-
+app.use('/api/trucks', trucks);
+app.use('/api/location', location);
+app.use('/api/login',login)
 
 app.use(express.static('./build'));
-console.log(__dirname)
+
+
+
 
 app.get('/', function (req, res, next) {
     res.sendFile(path.resolve('build/index.html'));
 });
 
 
-app.use('/api/trucks', trucks);
-app.use('/api/location', location);
-app.use('/api/login',login)
+
 
 
 
