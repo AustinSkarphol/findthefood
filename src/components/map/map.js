@@ -19,8 +19,8 @@ function MyComponent() {
     id: 'google-map-script',
     googleMapsApiKey: 'AIzaSyAU-uAGC8-48xU08mk84ADjtEsvh7gGNmo'
   })
-
-  const [setMap] = React.useState(null)
+// eslint-disable-next-line 
+  const [map, setMap] = React.useState(null)
 
   const onLoad = React.useCallback(function callback(map) {
     const bounds = new window.google.maps.LatLngBounds(center);
