@@ -12,7 +12,7 @@ const TruckOwner = db.truck_owner
 
 
 exports.create = async (req, res) => {
-console.log(req.body);
+
   if (!req.body.email) {
     res.status(400).send({
       message: "Content can not be empty!"
@@ -25,7 +25,7 @@ console.log(req.body);
   if (findUser) {
     return res.status(409).send("User Already Exist. Please Login");
   }
-  console.log('in loging register.')
+
 
   const token = jwt.sign(
     { id: Login.id, email: Login.email, type: Login.type },
@@ -74,7 +74,7 @@ console.log(req.body);
   // If Food truck then create flow for adding food truck and linking the user ID and food truck ID by adding to the food truck owner table.
   // If food cart lot, then add owner to food cart lot and set a lot id valu so that trucks can be added to the food cart lot
   if (req.body.type === "Food Truck") {
-    console.log('Truck Logic')
+
     await Login.create(login);
     await Truck.create(truck);
     const tid = await Truck.findOne({where : {name : req.body.truck_name}})
@@ -103,7 +103,7 @@ console.log(req.body);
     
   }
   else {
-    console.log('User Logic')
+
     Login.create(login)
       .then(data => {
         res.send('Registration Successful!');

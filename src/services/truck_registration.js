@@ -1,7 +1,6 @@
 import http from "../http-common";
 class TruckRegistrationService {
   create(data) {
-
     return http.post("/login/register", data);
   }
 //   update(id, data) {

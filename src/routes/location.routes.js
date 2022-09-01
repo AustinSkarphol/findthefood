@@ -12,6 +12,7 @@ const TruckLocationController = require("../controllers/truck_location.controlle
 
 router.post("/",TruckLocationController.create)
 router.get("/:tid", TruckLocationController.findTruckLocation)
+router.get("/", TruckLocationController.getTopTenTrucks)
 router.put("/:tid", TruckLocationController.update)
 
 

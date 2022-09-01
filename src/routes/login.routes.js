@@ -1,9 +1,10 @@
 const  express =  require("express");
 const router = express.Router();
-const TruckLoginController = require("../controllers/login.controller");
+const TruckRegisterController = require("../controllers/truck_registration");
 
 
-router.post("/register",TruckLoginController.create)
+router.post("/register",TruckRegisterController.create)
+// router.post("/user/register", UserRegistrationController.create)
 
 
 

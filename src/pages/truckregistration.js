@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import '../../styles/styles.css'
-import truckRegister from'../../services/truck_registration' 
+import '../styles/styles.css'
+import truckRegister from'../services/truck_registration' 
 
-function RegistrationForm() {
+const TruckRegister = () => {
 
 const [truckName, setTruckName] = useState(null);
 const [firstName, setFirstName] = useState(null);
@@ -73,7 +73,6 @@ const handleInputChange = (e) => {
 
 }
 
-console.log('In axios test');
 const handleSubmit  = () => {
         var data = {
           name: truckName,
@@ -95,7 +94,7 @@ const handleSubmit  = () => {
 
         };
 
-        console.log(data)
+
 
         truckRegister.create(data)
           .then(response => {
@@ -197,4 +196,4 @@ const toggleVeg = event => {
       </div>      
     )       
 }
-export default RegistrationForm;
+export default TruckRegister;

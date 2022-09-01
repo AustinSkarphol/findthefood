@@ -44,9 +44,11 @@ exports.create = (req, res) => {
   
 };
 
+
+
 exports.update = (req, res) => {
   const tid = req.params.tid;
-  console.log(req.body)
+
   TruckLocation.update(req.body, {
     where: { tid: tid }
   })
@@ -64,6 +66,22 @@ exports.update = (req, res) => {
     .catch(err => {
       res.status(500).send({
         message: "Error updating Truck with Truck Id:" + tid
+      });
+    });
+};
+
+
+exports.getTopTenTrucks = (req, res) => {
+
+  //var condition = id ? { id: { [Op.eq]: id } } : null;
+  TruckLocation.findAll({  limit: 10 })
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).send({
+        message:
+          err.message || "Some error occurred while retrieving Truck location."
       });
     });
 };
